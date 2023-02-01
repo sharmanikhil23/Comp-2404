@@ -1,0 +1,13 @@
+Program     :   Comp 2404 Assignment 4
+ Author     :   Nikhil Sharma 101284046
+   Date     :   24 November 2022
+Program     :   The library contains a master collection of books, and it maintains a collection of library 
+				        users. Each user manages a collection of the books that they have checked out of the library. The program avoids making copies of book objects by having each library user maintain a collection of book identifiers, instead of book objects.
+
+Source files:  Book.cc, BookArray.cc, BookLib.cc, IdArray.cc, main.cc, User.cc
+Header files:  Book.h, BookArray.h, BookLib.h, IdArray.h, defs.h, User.h
+  Data Files:  n/a
+
+Compilation :  make
+
+launching   : ./result

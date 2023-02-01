@@ -57,7 +57,7 @@ bool Book::compareAuthor(Book& b){
 }
 
 void Book::print(){
-    cout<<setw(4)<<id<<" : "<<setw(4)<<year<<" : "<<setw(40)<<title<<" : "<<authorLN<<", "<<authorFN<<endl;
+    cout<<left<<setw(4)<<id<<" : "<<setw(4)<<year<<" : "<<setw(40)<<title<<" : "<<authorLN<<", "<<authorFN<<endl;
 }
 
 

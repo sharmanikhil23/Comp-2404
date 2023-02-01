@@ -2,16 +2,17 @@
 using namespace std;
 #include <string>
 
-#include "defs.h"
-#include "Book.h"
-#include "BookArray.h"
-#include "IdArray.h"
 #include "User.h"
 #include "BookLib.h"
 
+/*
+Function:   main
+ Purpose:   This function is the main function of the program control all the
+            functionality of the program according to the user choice
+  return:   Return 0 at the end of the program
+*/
 int main()
 {
- 
   BookLib book;
   User users[NUM_USERS];
   int choice;
@@ -35,6 +36,11 @@ int main()
   return 0;
 }
 
+/*
+Function:   printMenu
+ Purpose:   This function give options to user to choose master or user library to view
+     out:   choice
+*/
 void printMenu(int& choice)
 {
   int c = -1;
@@ -60,7 +66,13 @@ void printMenu(int& choice)
 
   choice = c;
 }
-
+/*
+Function:   loadMasterLib
+ Purpose:   This function is used to set the name and the order in which user want to add all the books and 
+            add all the books in the master library
+     out:   lib
+      in:   name, order
+*/
 void loadMasterLib(BookLib& lib, string name, OrderType order)
 {
   int bookId = 1001;
@@ -111,6 +123,13 @@ void loadMasterLib(BookLib& lib, string name, OrderType order)
   lib.add(bookId++, "The Seven Deaths of Evelyn Hardcastle", "Stuard", "Turton", 2018);
 }
 
+/*
+Function:   loadUsers
+ Purpose:   This function is used add user in the user Array and add the books in their collection         
+            according to order they choose. 
+     out:   users
+      in:   master
+*/
 void loadUsers(User* users, BookLib& master)
 {
   users[0].setUserInfo("Calvin", ORDER_BY_AUTHOR);

@@ -6,6 +6,10 @@
 #include "Book.h"
 
 using namespace std;
+/*
+   Class:   BookArray
+ Purpose:   The class stores the collection of book objects according to the OrderType requested by the used
+*/
 
 class BookArray
 {

@@ -4,7 +4,7 @@ result:	Book.o Main.o BookArray.o BookLib.o IdArray.o User.o
 Book.o:	Book.cc Book.h
 	g++ -c Book.cc
 
-Main.o:	Main.cc Book.h BookArray.h BookLib.h IdArray.h User.h
+Main.o:	Main.cc BookLib.h User.h BookLib.o User.o
 	g++ -c Main.cc
 
 BookArray.o: BookArray.h BookArray.cc

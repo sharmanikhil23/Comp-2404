@@ -39,6 +39,7 @@ void BookArray::add(int i, string t, string f, string l, int y){
             }
         }
     }
+    
    if(flag){
     for(int i=nOfBooks;i>indexToInsert;i--){
         books[i].set(books[i-1].getId(),books[i-1].getTitle(),books[i-1].getAuthorFN(),books[i-1].getAuthorLN(),books[i-1].getYear());
