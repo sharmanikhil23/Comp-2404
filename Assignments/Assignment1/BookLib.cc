@@ -6,24 +6,23 @@ using namespace std;
 #include "BookArray.h"
 
 BookLib::BookLib(string user,OrderType order){
-     name=user;
-     order=order;
+  name=user;
+  order=order;
 }
 
 void BookLib::add(int i,string t,string f,string l,int y){
-    book.add(i,t,f,l,y);
+  book.add(i,t,f,l,y);
 }
 
 Book& BookLib::find(int id){
-    return book.find(id);
+  return book.find(id);
 }
 
 void BookLib::print(){
-    cout<<name<<":"<<endl;
-    book.print();
+  cout<<name<<":"<<endl;
+  book.print();
 }
 void BookLib::setLibInfo(string user,OrderType o){
-     name=user;
-    book.setOrder(o);
+  name=user;
+  book.setOrder(o);
 }
-

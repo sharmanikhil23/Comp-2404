@@ -7,65 +7,61 @@ using namespace std;
 
 
 BookArray::BookArray(int nOfElm, OrderType i){
-    nOfBooks=nOfElm;
-    orderType=i;
+  nOfBooks=nOfElm;
+  orderType=i;
 }
 
 void BookArray::setOrder(OrderType i){
-     orderType=i;
+  orderType=i;
 }
 
 void BookArray::add(int i, string t, string f, string l, int y){
 
-    //first finding the insertion point 
-    int indexToInsert=0;
-    bool flag=false;
+//first finding the insertion point
+  int indexToInsert=0;
+  bool flag=false;
 
-    if(orderType == ORDER_BY_YEAR){
-        for(int i=0;i<nOfBooks;i++){
-            if(books[i].compareYear(y)==false){
-                indexToInsert=i;
-                flag=true;
-                break;
-            }
-        }
-    }else{
-        Book temp(i,t,f,l,y);
-        for(int i=0;i<nOfBooks;i++){
-            if(books[i].compareAuthor(temp)==false){
-                indexToInsert=i;
-                flag=true;
-                break;
-            }
-        }
+  if(orderType == ORDER_BY_YEAR){
+    for(int i=0;i<nOfBooks;i++){
+      if(books[i].compareYear(y)==false){
+        indexToInsert=i;
+        flag=true;
+        break;
+      }
     }
-    
-   if(flag){
+  }else{
+    Book temp(i,t,f,l,y);
+    for(int i=0;i<nOfBooks;i++){
+      if(books[i].compareAuthor(temp)==false){
+        indexToInsert=i;
+        flag=true;
+        break;
+      }
+    }
+  }
+
+  if(flag){
     for(int i=nOfBooks;i>indexToInsert;i--){
-        books[i].set(books[i-1].getId(),books[i-1].getTitle(),books[i-1].getAuthorFN(),books[i-1].getAuthorLN(),books[i-1].getYear());
+      books[i].set(books[i-1].getId(),books[i-1].getTitle(),books[i-1].getAuthorFN(),books[i-1].getAuthorLN(),books[i-1].getYear());
     }
-
     books[indexToInsert].set(i,t,f,l,y);
-   }else{
+  }else{
     books[nOfBooks].set(i,t,f,l,y);
-   }
-    nOfBooks++;
-
-
-   
+  }
+  nOfBooks++;
 }
 
 Book& BookArray::find(int id){
-    for(int i=0;i<nOfBooks;i++){
-        if(books[i].getId()==id){
-            return books[i];
-        }
+  for(int i=0;i<nOfBooks;i++){
+    if(books[i].getId()==id){
+      return books[i];
     }
-     exit(1);
+  }
+  exit(1);
 }
 
 void BookArray::print(){
-    for(int i=0;i<nOfBooks;i++){
-        books[i].print();
-    }
+  for(int i=0;i<nOfBooks;i++){
+    books[i].print();
+  }
 }

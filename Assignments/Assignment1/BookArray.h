@@ -13,18 +13,17 @@ using namespace std;
 
 class BookArray
 {
-    private:
-        Book books[MAX_ARR_SIZE];
-        int nOfBooks;
-        OrderType orderType;
+  private:
+    Book books[MAX_ARR_SIZE];
+    int nOfBooks;
+    OrderType orderType;
 
-    public:
-        BookArray(int=0,OrderType=ORDER_BY_AUTHOR);
-        void setOrder(OrderType);
-        void add(int,string,string,string,int);
-        Book& find(int);
-        void print();
-
+  public:
+    BookArray(int=0,OrderType=ORDER_BY_AUTHOR);
+    void setOrder(OrderType);
+    void add(int,string,string,string,int);
+    Book& find(int);
+    void print();
 };
 
 #endif

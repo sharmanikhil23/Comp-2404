@@ -18,7 +18,7 @@ int main()
   int choice;
   BookLib &bookref=book;
   loadMasterLib(bookref,"Nikhil Sharma",ORDER_BY_YEAR);
-  
+
   loadUsers(users,bookref);
 
   printMenu(choice);
@@ -30,7 +30,7 @@ int main()
         users[i].printBooks(book);
       }
     }
-     printMenu(choice);
+  printMenu(choice);
   }
 
   return 0;
@@ -68,7 +68,7 @@ void printMenu(int& choice)
 }
 /*
 Function:   loadMasterLib
- Purpose:   This function is used to set the name and the order in which user want to add all the books and 
+ Purpose:   This function is used to set the name and the order in which user want to add all the books and
             add all the books in the master library
      out:   lib
       in:   name, order
@@ -125,8 +125,8 @@ void loadMasterLib(BookLib& lib, string name, OrderType order)
 
 /*
 Function:   loadUsers
- Purpose:   This function is used add user in the user Array and add the books in their collection         
-            according to order they choose. 
+ Purpose:   This function is used add user in the user Array and add the books in their collection
+            according to order they choose.
      out:   users
       in:   master
 */
@@ -180,5 +180,3 @@ void loadUsers(User* users, BookLib& master)
   users[2].addBook(1040, master);
   users[2].addBook(1041, master);
 }
-
-

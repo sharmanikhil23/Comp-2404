@@ -5,8 +5,8 @@
 using namespace std;
 /*
    Class:   Book
- Purpose:   The class is used to make an instace of the Book, with each instace we can store basic details 
-            of the book like name of the author, year of publication, title, and book Id 
+ Purpose:   The class is used to make an instace of the Book, with each instace we can store basic details
+            of the book like name of the author, year of publication, title, and book Id
 */
 class Book
 {
