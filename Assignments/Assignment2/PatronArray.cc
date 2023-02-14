@@ -15,12 +15,12 @@ PatronArray::~PatronArray()
   }
 }
 
-void PatronArray::add(Date* d)
+void PatronArray::add(Patron* p)
 {
-  if (size >= MAX_ARR_SIZE)
+  if (size >= MAX_ARR)
     return;
 
-  elements[size] = d;
+  elements[size] = p;
   ++size;
 }
 
@@ -28,7 +28,7 @@ void PatronArray::print()
 {
   cout << endl << endl << "Patrons: " << endl;
   for (int i=0; i<size; ++i) {
-    elements[i]->printLong();
+    elements[i]->print();
   }
 
   cout << endl;
@@ -37,13 +37,13 @@ void PatronArray::print()
 bool PatronArray::find(int id, Patron **p){
 
   for (int i=0; i<size; ++i) {
-    if(elements[i]->id==id){
+    if(elements[i]->getId()==id){
       *p=elements[i];
       return true;
     }
   }
 
-  *p=null;
+  *p=NULL;
   return false;
 }
 

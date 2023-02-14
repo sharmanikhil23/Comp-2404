@@ -10,13 +10,13 @@ class PatronArray
   public:
     PatronArray();
     ~PatronArray();
-    void add(Date*);
+    void add(Patron* p);
     void print();
     bool find(int, Patron**);
 
 
   private:
-    Patron* elements[MAX_ARR_SIZE];
+    Patron* elements[MAX_ARR];
     int   size;
 };
 

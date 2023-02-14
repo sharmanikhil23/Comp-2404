@@ -15,8 +15,8 @@ class Date
     int day;
     int month;
     int year;
-    static int  lastDayInMonth(int);
-    bool leapYear();
+    static int  lastDayInMonth(int,int);
+    static bool leapYear(int);
     
 };
 

@@ -36,7 +36,7 @@ bool Time::validate(int h, int m){
 }
 
 bool Time::lessThan(Time* t){
-  if(convertToMins(t->hours,t->minutes) < convertToMins(hours,minutes)){
+  if(convertToMins(t->hours,t->minutes) > convertToMins(hours,minutes)){
     return true;
   }else{
     return false;

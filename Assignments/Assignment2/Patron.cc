@@ -22,5 +22,5 @@ string Patron::getName(){
 }
 
 void Patron::print(){
-    cout<<"Patron "<<id<<" "<<name;
+    cout<<"Patron #"<<id<<" "<<name<<endl;
 }
