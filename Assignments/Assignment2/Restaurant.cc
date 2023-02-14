@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+
 using namespace std;
 
 #include "Restaurant.h"
@@ -10,7 +11,7 @@ Restaurant::Restaurant(string n){
 }
 
 Restaurant::~Restaurant(){
-    
+
 }
 
 void Restaurant::addPatron(Patron* p){
@@ -35,7 +36,7 @@ void Restaurant::reserveTable(int patronId,int tableNum, int year, int month,int
 
 void Restaurant::printReservations(){
 
-    cout<<"ALL RESERVATIONS AT "<<name<<" :"<<endl;
+    cout<<"ALL RESERVATIONS AT "<<name<<" : "<<endl;
     rsv.print();
 }
 
@@ -45,14 +46,14 @@ void Restaurant::printPatrons(){
 
 void Restaurant::printSchedule(int year,int month,int day){
     if(Date::validate(day,month,year)==false){
-        cout<<"Invalid day month year"<<cout;
+        cout<<"Invalid day month year"<<endl;
         return;
     }else{
         Date temp(day,month,year);
         Date *temp1=&temp;
         cout<<endl;
         cout<<"RESERVATIONS FOR  ";
-        temp.print(); 
+        temp.print();
         cout<< " at "<< name <<" : "<< endl;
         cout<<endl;
         for(int i=0;i<rsv.getSize();i++){
