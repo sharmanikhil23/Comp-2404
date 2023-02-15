@@ -5,6 +5,10 @@
 #include <string>
 using namespace std;
 
+/*
+ Class         :  View
+ Purpose       :  This class is used to give option to the user for restaurant
+*/
 
 class View
 {

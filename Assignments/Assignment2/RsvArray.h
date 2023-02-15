@@ -4,6 +4,17 @@
 #include "defs.h"
 #include "Reservation.h"
 
+
+/*
+ Class         :  RsvArray
+ Purpose       :  This class is used to keep track of all reservation done by the users
+
+ Critical attributes:
+ void add(Reservation*): It will store the new reservation in the ascending order accoding to the date and
+                         time
+
+*/
+
 class RsvArray
 {
     private:

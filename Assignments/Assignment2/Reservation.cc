@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include<iomanip>
 using namespace std;
 
 #include "Reservation.h"
@@ -13,8 +15,6 @@ Reservation::Reservation(Date *d,Time *tm, Patron *p ,int t){
 Reservation::~Reservation(){
     delete date;
     delete time;
-    delete patron;
-    cout<<"Called Reservation dstor"<<endl;
 }
 
 bool Reservation::lessThan(Reservation *r){
@@ -44,6 +44,6 @@ void Reservation::print(){
     date->print();
     cout<<" @ ";
     (time->print());
-    cout<<" :: "<<"Table  "<<table<<"  "<< (patron->getName())<<endl;
+    cout<<" :: "<<"Table  "<<setw(2)<<table<<"  "<< (patron->getName())<<endl;
 }
 

@@ -1,6 +1,11 @@
 #ifndef TIME_H
 #define TIME_H
 
+
+/*
+ Class         :  Time
+ Purpose       :  This class is used to keep track of Time of the reservation for restaurant
+*/
 class Time
 {
   public:

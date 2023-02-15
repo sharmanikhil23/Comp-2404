@@ -1,6 +1,14 @@
 #ifndef PATRON_H
 #define PATRON_H
 
+/*
+ Class  :   Patron
+ Purpose:   This class will help us to make the  instance of the patrons 
+
+Critical attributes:
+nextID  :   It is static variable which help the user to get the new patron id everytime new Patron is added  
+*/
+
 class Patron
 {
     public:

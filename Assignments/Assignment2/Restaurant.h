@@ -8,6 +8,11 @@
 #include "Date.h"
 #include "RsvArray.h"
 
+/*
+ Class         :  Restaurant
+ Purpose       :  This class is used to keep track of all different aspects of the restaurant
+
+*/
 
 class Restaurant
 {
