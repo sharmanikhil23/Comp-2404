@@ -22,38 +22,35 @@ void Control::launch(){
 
   while(choice!=0){
     if(choice==1){
-        r->printReservations();
-    }else if(choice==2){
-
-      int y,m,d;
-      cout<<"Please Enter the year, month and day ";
-      cin>> y >> m >>d;
-      r->printSchedule(y,m,d);
-    
-    }else if(choice==3){
-      r->printPatrons();
-    }else{
-      int pId;
-      cout<<"Please Enter the Patron Id ";
-      cin>>pId;
-      cout<<endl;
-      int tableNum;
-      cout<<"Please Enter the table number ";
-      cin>>tableNum;
-      cout<<endl;
-      int y,m,d;
-      cout<<"Please Enter the year, month and day ";
-      cin>> y >> m >>d;
-      cout<<endl;
-      int hour, minutes;
-      cout<<"Please Enter the hour and minutes ";
-      cin>>hour>>minutes;
-      cout<<endl;
-      r->reserveTable(pId,tableNum,y,m,d,hour,minutes);
-    }
-    view.showMenu(choice);
+    r->printReservations();
+  }else if(choice==2){
+    int y,m,d;
+    cout<<"Please Enter the year, month and day ";
+    cin>> y >> m >>d;
+    r->printSchedule(y,m,d);
+  }else if(choice==3){
+    r->printPatrons();
+  }else{
+    int pId;
+    cout<<"Please Enter the Patron Id ";
+    cin>>pId;
+    cout<<endl;
+    int tableNum;
+    cout<<"Please Enter the table number ";
+    cin>>tableNum;
+    cout<<endl;
+    int y,m,d;
+    cout<<"Please Enter the year, month and day ";
+    cin>> y >> m >>d;
+    cout<<endl;
+    int hour, minutes;
+    cout<<"Please Enter the hour and minutes ";
+    cin>>hour>>minutes;
+    cout<<endl;
+    r->reserveTable(pId,tableNum,y,m,d,hour,minutes);
   }
-
+  view.showMenu(choice);
+  }
 }
 
 void Control::initReservations(Restaurant* r)
@@ -98,4 +95,3 @@ void Control::initPatrons(Restaurant* r)
   r->addPatron(new Patron("James"));
   r->addPatron(new Patron("Hugo"));
 }
-

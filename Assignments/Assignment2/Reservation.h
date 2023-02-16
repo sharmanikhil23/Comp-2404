@@ -14,19 +14,18 @@ Critical attributes:
 */
 class Reservation
 {
-    private:
-        int table;
-        Date *date;
-        Patron *patron;
-        Time *time;
-    
-    public:
-        Reservation(Date *d,Time *t, Patron *p ,int=1);
-        ~Reservation();
-        bool lessThan(Reservation *);
-        bool matchDate(Date*);
-        void print();
+  private:
+    int table;
+    Date *date;
+    Patron *patron;
+    Time *time;
+
+  public:
+    Reservation(Date *d,Time *t, Patron *p ,int=1);
+    ~Reservation();
+    bool lessThan(Reservation *);
+    bool matchDate(Date*);
+    void print();
 };
 
 #endif
-

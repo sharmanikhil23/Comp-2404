@@ -3,20 +3,17 @@ using namespace std;
 
 #include "PatronArray.h"
 
-PatronArray::PatronArray()
-{
+PatronArray::PatronArray(){
   size = 0;
 }
 
-PatronArray::~PatronArray()
-{
+PatronArray::~PatronArray(){
   for (int i=0; i<size; ++i) {
     delete(elements[i]);
   }
 }
 
-void PatronArray::add(Patron* p)
-{
+void PatronArray::add(Patron* p){
   if (size >= MAX_ARR)
     return;
 
@@ -35,17 +32,13 @@ void PatronArray::print()
 }
 
 bool PatronArray::find(int id, Patron **p){
-
   for (int i=0; i<size; ++i) {
     if(elements[i]->getId()==id){
-      *p=elements[i];
-      return true;
+    *p=elements[i];
+    return true;
     }
   }
 
   *p=NULL;
   return false;
 }
-
-
-

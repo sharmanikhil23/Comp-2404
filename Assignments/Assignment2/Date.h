@@ -4,7 +4,7 @@
 
 /*
  Class  :   Date
- Purpose:   This class helps us to keep track of the dates for the restaurant 
+ Purpose:   This class helps us to keep track of the dates for the restaurant
 
 Critical Functions:
 validate:    It is the static member function can be run from anywhere with just the class name
@@ -26,7 +26,6 @@ class Date
     int year;
     static int  lastDayInMonth(int,int);
     static bool leapYear(int);
-    
 };
 
 #endif

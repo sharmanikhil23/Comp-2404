@@ -14,11 +14,10 @@ Date::Date(int d, int m, int y)
 
 Date::~Date()
 {
-  
+
 }
 
 bool Date::validate(int d, int m, int y){
-
   int lastDay=lastDayInMonth(m,y);
 
   if(m>12 || m<0){
@@ -40,34 +39,29 @@ bool Date::equals(Date *d){
 }
 
 bool Date::lessThan(Date *d){
-
   if(year> d->year){
     return false;
   }else if(year< d->year){
     return true;
   }else {
     if(month> d->month){
-    return false;
-   }else if(month> d->month){
-    return true;
-   }else{
-    if(day>d->day){
       return false;
-    }else if((day<d->day)){
+    }else if(month> d->month){
       return true;
     }else{
-      return false;
+      if(day>d->day){
+        return false;
+      }else if((day<d->day)){
+        return true;
+      }else{
+        return false;
+      }
     }
-   }
   }
-  
-
 }
 
-int Date::lastDayInMonth(int month, int year)
-{
-  switch(month)
-  {
+int Date::lastDayInMonth(int month, int year){
+  switch(month){
     case 2:
       if (leapYear(year))
         return 29;
@@ -88,8 +82,7 @@ int Date::lastDayInMonth(int month, int year)
 
 bool Date::leapYear(int year)
 {
-  if ( year%400 == 0 ||
-       (year%4 == 0 && year%100 != 0) )
+  if ( year%400 == 0 || (year%4 == 0 && year%100 != 0) )
     return true;
   else
     return false;
@@ -99,6 +92,3 @@ bool Date::leapYear(int year)
 void Date::print(){
   cout<<year<<"-"<<month<<"-"<<day;
 }
-
-
-
