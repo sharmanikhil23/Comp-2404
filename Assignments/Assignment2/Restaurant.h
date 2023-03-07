@@ -16,22 +16,19 @@
 
 class Restaurant
 {
-    private:
-       string name;
-       PatronArray patrons;
-       RsvArray rsv;
-    
-    public:
-        Restaurant(string="Restaurant Name");
-        ~Restaurant();
-        void addPatron(Patron*);
-        void reserveTable(int,int, int, int,int,int,int);
-        void printReservations();
-        void printSchedule(int,int,int);
-        void printPatrons();
+  private:
+    string name;
+    PatronArray patrons;
+    RsvArray rsv;
+
+  public:
+    Restaurant(string="Restaurant Name");
+    ~Restaurant();
+    void addPatron(Patron*);
+    void reserveTable(int,int, int, int,int,int,int);
+    void printReservations();
+    void printSchedule(int,int,int);
+    void printPatrons();
 };
 
 #endif
-
-
-

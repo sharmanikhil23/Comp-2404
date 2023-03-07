@@ -8,19 +8,19 @@ using namespace std;
 int Patron::nextId=5001;
 
 Patron::Patron(string n){
-    name=n;
-    id=nextId;
-    nextId++;
+  name=n;
+  id=nextId;
+  nextId++;
 }
 
 int Patron::getId(){
-    return id;
+  return id;
 }
 
 string Patron::getName(){
-    return name;
+  return name;
 }
 
 void Patron::print(){
-    cout<<"Patron #"<<id<<" "<<name<<endl;
+  cout<<"Patron #"<<id<<" "<<name<<endl;
 }

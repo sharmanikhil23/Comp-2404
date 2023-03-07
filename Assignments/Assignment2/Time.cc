@@ -16,15 +16,15 @@ void Time::setTime(int h, int m)
   minutes = ( m >= 0 && m < 60) ? m : 0;
 }
 
-int Time::convertToMins(int hours, int minutes) 
+int Time::convertToMins(int hours, int minutes)
 {
   return (hours*60 + minutes);
 }
 
-void Time::print() 
+void Time::print()
 {
   cout<<setfill('0')<<setw(2)<<hours<<":"
-      <<setfill('0')<<setw(2)<<minutes;
+  <<setfill('0')<<setw(2)<<minutes;
 }
 
 bool Time::validate(int h, int m){
@@ -42,4 +42,3 @@ bool Time::lessThan(Time* t){
     return false;
   }
 }
-

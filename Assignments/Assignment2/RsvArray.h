@@ -17,20 +17,18 @@
 
 class RsvArray
 {
-    private:
-        Reservation** res;
-        int capacity;
-        int size;
-    
-    public:
-        RsvArray(int= MAX_ARR);
-        ~RsvArray();
-        void add(Reservation*);
-        int getSize();
-        Reservation* get(int index);
-        void print();
-  
+  private:
+    Reservation** res;
+    int capacity;
+    int size;
+
+  public:
+    RsvArray(int= MAX_ARR);
+    ~RsvArray();
+    void add(Reservation*);
+    int getSize();
+    Reservation* get(int index);
+    void print();
 };
 
 #endif
-

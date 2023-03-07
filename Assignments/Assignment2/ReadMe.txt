@@ -1,4 +1,4 @@
-Program    : Comp 2404 Assignment 1
+Program    : Comp 2404 Assignment 2
 Author     : Nikhil Sharma 101284046
 Date       : 15 February 2023
 
