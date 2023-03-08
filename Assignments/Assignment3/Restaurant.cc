@@ -8,6 +8,7 @@ using namespace std;
 Restaurant::Restaurant(string n) { name = n; }
 
 Restaurant::~Restaurant() {
+  cout << "Resturant destructure Called" << endl;
   for (int i = 0; i < numTables; i++) {
     delete tables[i];
   }
