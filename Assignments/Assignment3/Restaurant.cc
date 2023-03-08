@@ -57,7 +57,9 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     tempRes = new Reservation *[MAX_ARR];
     rsv.convertToArray(tempRes, nOfRes);
 
+    bool added = false;
     for (int i = 0; i < numTables; i++) {
+
       if (tables[i]->getTCapacity() == tempCap) {
         bool tableFlag = true;
         for (int j = 0; j < nOfRes; j++) {
@@ -73,13 +75,19 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
             }
           }
         }
+
         if (tableFlag == true) {
           Reservation *temp = new Reservation(p, tables[i], date, time);
           rsv.add(temp);
-          deallocArray(tempRes, nOfRes);
-          return;
+          added = true;
+          break;
         }
       }
+    }
+    deallocArray(tempRes, tempCap);
+
+    if (added == true) {
+      return;
     }
 
     cout << "No avaliable table could be found for " << c << " people on ";
@@ -87,7 +95,6 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     cout << " @ ";
     time->print();
     cout << endl;
-    deallocArray(tempRes, nOfRes);
   }
 }
 
@@ -100,8 +107,5 @@ int Restaurant::capacityCalculator(int cap) {
 }
 
 void Restaurant::deallocArray(Reservation **tempRes, int nOfRes) {
-  //   for (int i = 0; i < nOfRes; i++) {
-  //     delete tempRes[i];
-  //   }
   delete[] tempRes;
 }

@@ -28,6 +28,7 @@ void RsvList::add(Reservation *r) {
 
   while (current != NULL) {
     if (current->r->lessThan(r) == false) {
+
       break;
     }
     prev = current;

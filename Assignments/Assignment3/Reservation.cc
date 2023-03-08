@@ -13,6 +13,7 @@ Reservation::Reservation(string n, Table *t, Date *d, Time *tm) {
 }
 
 Reservation::~Reservation() {
+  cout << "Reservation destructor Called" << endl;
   delete date;
   delete time;
 }
