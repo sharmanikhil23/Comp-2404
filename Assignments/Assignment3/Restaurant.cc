@@ -8,6 +8,7 @@ using namespace std;
 Restaurant::Restaurant(string n) { name = n; }
 
 Restaurant::~Restaurant() {
+  cout<<"Restaurant Destructure "<<endl;
   for (int i = 0; i < numTables; i++) {
     delete tables[i];
   }
@@ -57,9 +58,9 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     tempRes = new Reservation *[MAX_ARR];
     rsv.convertToArray(tempRes, nOfRes);
 
-    bool added = false;
-    for (int i = 0; i < numTables; i++) {
+    bool added=false;
 
+    for (int i = 0; i < numTables; i++) {
       if (tables[i]->getTCapacity() == tempCap) {
         bool tableFlag = true;
         for (int j = 0; j < nOfRes; j++) {
@@ -75,18 +76,17 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
             }
           }
         }
-
         if (tableFlag == true) {
           Reservation *temp = new Reservation(p, tables[i], date, time);
           rsv.add(temp);
-          added = true;
+          added=true;
           break;
         }
       }
     }
-    deallocArray(tempRes, tempCap);
 
-    if (added == true) {
+    deallocArray(tempRes,nOfRes);
+    if(added){
       return;
     }
 
@@ -95,6 +95,7 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     cout << " @ ";
     time->print();
     cout << endl;
+
   }
 }
 
@@ -107,5 +108,6 @@ int Restaurant::capacityCalculator(int cap) {
 }
 
 void Restaurant::deallocArray(Reservation **tempRes, int nOfRes) {
+cout<<"called"<<endl;
   delete[] tempRes;
 }
