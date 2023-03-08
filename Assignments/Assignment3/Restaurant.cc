@@ -44,15 +44,15 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
          << " is outside of our business hours" << endl;
     return;
   } else {
-    Date *date = new Date(day, month, year);
-    Time *time = new Time(hour, minute);
+
     int tempCap = capacityCalculator(c);
     if (tempCap > MAX_TABLE_CAP) {
       cout << "Error: The Requested Capacity of " << c
            << " cannot be accommodated" << endl;
       return;
     }
-
+    Date *date = new Date(day, month, year);
+    Time *time = new Time(hour, minute);
     int nOfRes = 0;
     Reservation **tempRes;
     tempRes = new Reservation *[MAX_ARR];
@@ -95,6 +95,8 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     cout << " @ ";
     time->print();
     cout << endl;
+    delete date;
+    delete time;
 
   }
 }

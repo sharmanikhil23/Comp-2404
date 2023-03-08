@@ -9,12 +9,13 @@ using namespace std;
 RsvList::RsvList() { head = NULL; }
 
 RsvList::~RsvList() {
+  cout<<"List destructor Called"<<endl;
   Node *temp = head;
   while (temp != NULL) {
     delete temp->r;
-    Node *temp1 = temp->next;
+    Node *next = temp->next;
     delete temp;
-    temp = temp1;
+    temp = next;
   }
 }
 
