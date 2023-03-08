@@ -13,14 +13,12 @@ Reservation::Reservation(string n, Table *t, Date *d, Time *tm) {
 }
 
 Reservation::~Reservation() {
-  cout << "Reservation destructor Called" << endl;
   delete date;
   delete time;
 }
 
 int Reservation::getReservedTableNumber() { return table->getTNumber(); }
 
-// if r occur before this reservation
 bool Reservation::lessThan(Reservation *r) {
   if (date->lessThan(r->date)) {
     return true;
@@ -40,8 +38,8 @@ bool Reservation::overlaps(Date *d, Time *t) {
   if (date->equals(d) == true) {
     Time *currentResEnd = new Time(time);
     Time *expectedResEnd = new Time(t);
-    expectedResEnd->add(2, 0);
-    currentResEnd->add(2, 0);
+    expectedResEnd->add(RSV_HR, 0);
+    currentResEnd->add(RSV_HR, 0);
 
     if (t->overlaps(time, currentResEnd) == false &&
         time->overlaps(t, expectedResEnd) == false) {

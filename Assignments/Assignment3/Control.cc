@@ -7,6 +7,7 @@ using namespace std;
 Control::Control() { restaurant = new Restaurant("Nikhil Bistro"); }
 
 Control::~Control() { delete restaurant; }
+
 void Control::launch() {
   initTables(restaurant);
   initReservations(restaurant);
@@ -17,21 +18,10 @@ void Control::launch() {
       restaurant->printReservations();
     } else if (choice == 2) {
       string name;
-      cout << "Please Enter patron name ";
-      cin >> name;
-      cout << endl;
       int cap;
-      cout << "Please Enter the required table capacity ";
-      cin >> cap;
-      cout << endl;
       int y, m, d;
-      cout << "Please Enter the year, month and day ";
-      cin >> y >> m >> d;
-      cout << endl;
       int hour, minutes;
-      cout << "Please Enter the hour and minutes ";
-      cin >> hour >> minutes;
-      cout << endl;
+      view.addRes(name, cap, y, m, d, hour, minutes);
       restaurant->reserveTable(name, cap, y, m, d, hour, minutes);
     }
 

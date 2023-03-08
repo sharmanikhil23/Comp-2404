@@ -10,7 +10,7 @@ Table::Table(int n, int c) {
   capacity = c;
 }
 
-Table::~Table() { cout << "Table destructure called" << endl; }
+Table::~Table() {}
 
 int Table::getTCapacity() { return capacity; }
 

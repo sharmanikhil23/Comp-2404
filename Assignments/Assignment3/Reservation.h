@@ -4,7 +4,18 @@
 #include "Date.h"
 #include "Table.h"
 #include "Time.h"
+#include "defs.h"
+/*
+ Class  :   Reservation
+ Purpose:   This class is used to make Reservation for the user and it does have
+pointer for the table date and time
 
+Critical Functions:
+~Reservation:    It is the destructure it will deallocate the data and time but
+it does not dealloc the table because if we dealloc it we will loose one table
+from our list and cannot use it later
+
+*/
 class Reservation {
 private:
   string patron;

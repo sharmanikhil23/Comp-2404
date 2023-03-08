@@ -8,7 +8,6 @@ using namespace std;
 Restaurant::Restaurant(string n) { name = n; }
 
 Restaurant::~Restaurant() {
-  cout<<"Restaurant Destructure "<<endl;
   for (int i = 0; i < numTables; i++) {
     delete tables[i];
   }
@@ -51,6 +50,7 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
            << " cannot be accommodated" << endl;
       return;
     }
+
     Date *date = new Date(day, month, year);
     Time *time = new Time(hour, minute);
     int nOfRes = 0;
@@ -58,7 +58,7 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     tempRes = new Reservation *[MAX_ARR];
     rsv.convertToArray(tempRes, nOfRes);
 
-    bool added=false;
+    bool added = false;
 
     for (int i = 0; i < numTables; i++) {
       if (tables[i]->getTCapacity() == tempCap) {
@@ -79,14 +79,15 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
         if (tableFlag == true) {
           Reservation *temp = new Reservation(p, tables[i], date, time);
           rsv.add(temp);
-          added=true;
+          added = true;
           break;
         }
       }
     }
 
-    deallocArray(tempRes,nOfRes);
-    if(added){
+    deallocArray(tempRes);
+
+    if (added) {
       return;
     }
 
@@ -97,7 +98,6 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     cout << endl;
     delete date;
     delete time;
-
   }
 }
 
@@ -109,7 +109,4 @@ int Restaurant::capacityCalculator(int cap) {
   }
 }
 
-void Restaurant::deallocArray(Reservation **tempRes, int nOfRes) {
-cout<<"called"<<endl;
-  delete[] tempRes;
-}
+void Restaurant::deallocArray(Reservation **tempRes) { delete[] tempRes; }

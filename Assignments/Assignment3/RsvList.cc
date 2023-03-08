@@ -9,7 +9,7 @@ using namespace std;
 RsvList::RsvList() { head = NULL; }
 
 RsvList::~RsvList() {
-  cout<<"List destructor Called"<<endl;
+
   Node *temp = head;
   while (temp != NULL) {
     delete temp->r;
@@ -29,7 +29,6 @@ void RsvList::add(Reservation *r) {
 
   while (current != NULL) {
     if (current->r->lessThan(r) == false) {
-
       break;
     }
     prev = current;
