@@ -85,3 +85,8 @@ void Date::print() {
   cout << year << "-" << setfill('0') << setw(2) << month << "-" << setfill(' ')
        << setw(2) << day;
 }
+
+void Date::print(int year, int month, int day) {
+  cout << year << "-" << setfill('0') << setw(2) << month << "-" << setfill(' ')
+       << setw(2) << day;
+}

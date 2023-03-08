@@ -59,8 +59,8 @@ void Reservation::print() {
   date->print();
   cout << " @ ";
   time->print();
-  cout << "  ==>  Table  " << getReservedTableNumber() << "  " << patron
-       << endl;
+  cout << "  ==>  Table  " << left << setfill(' ') << setw(2)
+       << getReservedTableNumber() << "  " << patron << endl;
 }
 
 bool Reservation::equalDate(Date *d) { return date->equals(d); }

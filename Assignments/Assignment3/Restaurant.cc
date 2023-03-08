@@ -29,18 +29,19 @@ void Restaurant::printReservations() {
 void Restaurant::reserveTable(string p, int c, int year, int month, int day,
                               int hour, int minute) {
   if (Date::validate(day, month, year) == false) {
-    cout << "ERROR: Reservation date " << year << "-" << setfill('0') << setw(2)
-         << month << "-" << setfill('0') << setw(2) << day << " is invalid"
-         << endl;
+    cout << "ERROR: Reservation date ";
+    Date::print(year, month, day);
+    cout << " is invalid" << endl;
     return;
   } else if (Time::validate(hour, minute) == false) {
-    cout << "Error: Time" << setfill('0') << setw(2) << hour << ":"
-         << setfill('0') << setw(2) << minute << " is invalid" << endl;
+    cout << "Error: Time";
+    Time::print(hour, minute);
+    cout << "is invalid " << endl;
     return;
   } else if (hour < OPEN_HR || hour > CLOSE_HR) {
-    cout << "Error: The requested time " << setfill('0') << setw(2) << hour
-         << ":" << setfill('0') << setw(2) << minute
-         << " is outside of our business hours" << endl;
+    cout << "Error: The requested time ";
+    Time::print(hour, minute);
+    cout << " is outside of our business hours" << endl;
     return;
   } else {
 

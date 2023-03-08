@@ -15,6 +15,7 @@ public:
   Time(int = 0, int = 0);
   Time(Time *);
   void print();
+  static void print(int, int);
   void add(int, int);
   bool overlaps(Time *, Time *);
   bool lessThan(Time *);

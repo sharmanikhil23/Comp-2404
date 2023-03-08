@@ -30,6 +30,11 @@ void Time::print() {
        << minutes;
 }
 
+void Time::print(int hours, int minutes) {
+  cout << setfill('0') << setw(2) << hours << ":" << setfill('0') << setw(2)
+       << minutes;
+}
+
 bool Time::validate(int hrs, int min) {
   if (hrs >= 0 && hrs < 24 && min >= 0 && min < 60) {
     return true;

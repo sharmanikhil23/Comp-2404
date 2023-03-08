@@ -18,6 +18,7 @@ public:
   bool lessThan(Date *);
   bool equals(Date *);
   void print();
+  static void print(int, int, int);
 
 private:
   int day;
