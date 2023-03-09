@@ -32,17 +32,17 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     cout << "ERROR: Reservation date ";
     Date::print(year, month, day);
     cout << " is invalid" << endl;
-    return;
+
   } else if (Time::validate(hour, minute) == false) {
     cout << "Error: Time";
     Time::print(hour, minute);
     cout << "is invalid " << endl;
-    return;
+
   } else if (hour < OPEN_HR || hour > CLOSE_HR) {
     cout << "Error: The requested time ";
     Time::print(hour, minute);
     cout << " is outside of our business hours" << endl;
-    return;
+
   } else {
 
     int tempCap = capacityCalculator(c);
@@ -55,8 +55,9 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     Date *date = new Date(day, month, year);
     Time *time = new Time(hour, minute);
     int nOfRes = 0;
+
     Reservation **tempRes;
-    tempRes = new Reservation *[MAX_ARR];
+    tempRes = new Reservation*[MAX_ARR];
     rsv.convertToArray(tempRes, nOfRes);
 
     bool added = false;

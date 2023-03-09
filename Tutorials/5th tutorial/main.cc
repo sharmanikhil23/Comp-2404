@@ -11,7 +11,7 @@ void printFarms(Farm **arr, int size);
 void dealloc(Farm **arr, int size);
 
 int main() {
-  Farm **data = new Farm *[MAX_SIZE];
+  Farm **data;
   int nOfFarms = 0;
   initFarms(data, nOfFarms);
   printFarms(data, nOfFarms);
@@ -21,6 +21,7 @@ int main() {
 }
 
 void initFarms(Farm **arr, int &size) {
+  arr= new Farm *[MAX_SIZE]
   for (int i = 0; i < 5; i++) {
     arr[i] = new Farm();
     size++;

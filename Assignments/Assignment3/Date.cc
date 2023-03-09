@@ -82,11 +82,11 @@ bool Date::leapYear(int year) {
 }
 
 void Date::print() {
-  cout << year << "-" << setfill('0') << setw(2) << month << "-" << setfill(' ')
+  cout << year << "-" <<right<< setfill('0') << setw(2) << month << "-" << setfill('0')
        << setw(2) << day;
 }
 
 void Date::print(int year, int month, int day) {
-  cout << year << "-" << setfill('0') << setw(2) << month << "-" << setfill(' ')
+  cout << year << "-" << setfill('0') << setw(2) << month << "-" << setfill('0')
        << setw(2) << day;
 }
