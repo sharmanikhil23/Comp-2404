@@ -4,7 +4,10 @@ using namespace std;
 
 #include "Control.h"
 
-Control::Control() { restaurant = new Restaurant("Nikhil Bistro"); }
+Control::Control() {
+  restaurant = new Restaurant("Nikhil Bistro");
+
+ }
 
 Control::~Control() { delete restaurant; }
 
@@ -68,6 +71,7 @@ void Control::initReservations(Restaurant *r) {
 }
 
 void Control::initTables(Restaurant *r) {
+
   r->addTable(new Table(1, 6));
   r->addTable(new Table(2, 4));
   r->addTable(new Table(3, 2));

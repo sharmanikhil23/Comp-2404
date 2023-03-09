@@ -5,7 +5,10 @@ using namespace std;
 
 #include "Restaurant.h"
 
-Restaurant::Restaurant(string n) { name = n; }
+Restaurant::Restaurant(string n) {
+   name = n;
+   numTables=0;
+ }
 
 Restaurant::~Restaurant() {
   for (int i = 0; i < numTables; i++) {
@@ -14,11 +17,14 @@ Restaurant::~Restaurant() {
 }
 
 void Restaurant::addTable(Table *t) {
+
   if (numTables == MAX_ARR) {
     cout << "-------MAX SIZE REACHED------" << endl;
+    delete t;
     return;
   }
-  tables[numTables++] = t;
+  tables[numTables] = t;
+  ++numTables;
 }
 
 void Restaurant::printReservations() {
@@ -56,16 +62,18 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
     Time *time = new Time(hour, minute);
     int nOfRes = 0;
 
-    Reservation **tempRes;
-    tempRes = new Reservation*[MAX_ARR];
+    Reservation **tempRes = new Reservation*[MAX_ARR];
     rsv.convertToArray(tempRes, nOfRes);
+
 
     bool added = false;
 
     for (int i = 0; i < numTables; i++) {
+
       if (tables[i]->getTCapacity() == tempCap) {
         bool tableFlag = true;
         for (int j = 0; j < nOfRes; j++) {
+
           if ((tempRes[j]->getReservedTableNumber()) ==
               (tables[i]->getTNumber())) {
 
@@ -78,6 +86,7 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
             }
           }
         }
+
         if (tableFlag == true) {
           Reservation *temp = new Reservation(p, tables[i], date, time);
           rsv.add(temp);
@@ -86,6 +95,8 @@ void Restaurant::reserveTable(string p, int c, int year, int month, int day,
         }
       }
     }
+
+
 
     deallocArray(tempRes);
 
