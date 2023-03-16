@@ -4,17 +4,18 @@ using namespace std;
 
 #include "View.h"
 
-void View::showMenu(int& choice)
-{
+View::~View() {}
+
+void View::showMenu(int &choice) {
   int numOptions = 3;
 
   cout << endl << endl;
-  cout << "What would you like to do:"<< endl;
+  cout << "What would you like to do:" << endl;
   cout << "  (1) Print all clinic data" << endl;
   cout << "  (2) Print animals" << endl;
   cout << "  (3) Print customers" << endl;
 
-  cout << "  (0) Exit" << endl<<endl;
+  cout << "  (0) Exit" << endl << endl;
 
   cout << "Enter your selection: ";
   cin >> choice;
@@ -25,23 +26,10 @@ void View::showMenu(int& choice)
     cout << "Enter your selection: ";
     cin >> choice;
   }
-
 }
 
-void View::printStr(string str)
-{
-  cout << str;
-}
+void View::printStr(string str) { cout << str; }
 
-void View::readInt(int& n)
-{
-  cin >> n;
-}
+void View::readInt(int &n) { cin >> n; }
 
-void View::readStr(string& str)
-{
-  cin >> str;
-}
-
-
-
+void View::readStr(string &str) { cin >> str; }

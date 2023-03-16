@@ -10,8 +10,11 @@ Clinic::Clinic(string n) {
   customers = new IdArray(false);
 }
 Clinic::~Clinic() {
-  delete animals;
+
+  // delete animals;
   delete customers;
+  // delete customers;
+  // delete animals;
 }
 
 void Clinic::add(Customer *c) { customers->add(c); }

@@ -7,19 +7,18 @@ using namespace std;
 
 int Customer::nextId = CUSTOMER_IDS;
 
-Customer::Customer(string n) : Identifiable(nextId) {
-  name = n;
-  pets = new IdList(true);
-}
+Customer::Customer(string n) : Identifiable(nextId) { name = n; }
 
-void Customer::addAnimal(Animal *a) { pets->add(a); }
+Customer::~Customer() {}
 
-int Customer::getCompValue() { return pets->getSize(); }
+void Customer::addAnimal(Animal *a) { pets.add(a); }
+
+int Customer::getCompValue() { return pets.getSize(); }
 
 void Customer::print() {
   cout << setw(4) << Identifiable::getId() << "  " << getCustomerName() << endl;
   cout << "-----Pets" << endl;
-  pets->print();
+  pets.print();
   cout << endl;
 }
 

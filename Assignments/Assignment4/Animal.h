@@ -23,6 +23,7 @@ public:
   int getId();
   virtual void print();
   Animal(SpeciesType, string n, string g, int y, int m);
+  ~Animal();
 };
 
 #endif

@@ -13,16 +13,16 @@ class IdList : public Collection {
   };
 
 public:
-  IdList(bool);
+  IdList(bool = true);
   virtual ~IdList();
   virtual bool add(Identifiable *);
   virtual bool find(int, Identifiable **);
-  void cleanupData();
   virtual void print();
   int getSize();
 
 private:
   int size;
   Node *head;
+  void cleanupData();
 };
 #endif

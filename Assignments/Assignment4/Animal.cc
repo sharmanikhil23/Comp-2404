@@ -16,6 +16,8 @@ Animal::Animal(SpeciesType t, string n, string g, int y, int m)
   parent = NULL;
 }
 
+Animal::~Animal() {}
+
 int Animal::getCompValue() { return age; }
 
 void Animal::print() {

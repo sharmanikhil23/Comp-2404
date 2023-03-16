@@ -9,8 +9,8 @@ Control::Control() {
   v = new View();
 }
 Control::~Control() {
-  delete c;
   delete v;
+  delete c;
 }
 
 void Control::launch() {
@@ -29,10 +29,7 @@ void Control::launch() {
       c->printAnimals();
     } else if (choice == 3) {
       c->printCustomers();
-    } else {
-      return;
     }
-
     v->showMenu(choiceRef);
   }
 }
