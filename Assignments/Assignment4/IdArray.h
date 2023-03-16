@@ -8,7 +8,7 @@
 class IdArray : public Collection {
 
 public:
-  IdArray(int = MAX_ARR, bool = true);
+  IdArray(bool = true, int = MAX_ARR);
   virtual ~IdArray();
   virtual bool add(Identifiable *);
   virtual bool find(int, Identifiable **);

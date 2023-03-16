@@ -4,7 +4,7 @@ using namespace std;
 
 #include "IdList.h"
 
-IdList::IdList(bool a) : Collection(a), head(NULL) {}
+IdList::IdList(bool a) : Collection(a) { head = NULL; }
 
 IdList::~IdList() { cleanupData(); }
 
@@ -20,7 +20,6 @@ void IdList::cleanupData() {
 
 bool IdList::add(Identifiable *obj) {
   bool asc = Collection::asc;
-  bool flag = false;
   Node *current = head;
   Node *prev = NULL;
   Node *tempData = new Node();
@@ -30,12 +29,10 @@ bool IdList::add(Identifiable *obj) {
   while (current != NULL) {
     if (asc) {
       if (current->data->getCompValue() > obj->getCompValue()) {
-        flag = true;
         break;
       }
     } else {
-      if (current->data->getCompValue() > obj->getCompValue()) {
-        flag = true;
+      if (current->data->getCompValue() < obj->getCompValue()) {
         break;
       }
     }
@@ -58,15 +55,24 @@ bool IdList::add(Identifiable *obj) {
 bool IdList::find(int id, Identifiable **foundObj) {
   Node *temp = head;
   while (temp != NULL) {
-    if (temp->data->getCompValue() == id) {
+    if (temp->data->getId() == id) {
       *foundObj = temp->data;
       return true;
     }
+    temp = temp->next;
   }
+
   foundObj = NULL;
   return false;
 }
 
-void IdList::print() { cout << "Printing from IdList class" << endl; }
+void IdList::print() {
+  cout << "ANIMALS:" << endl;
+  Node *temp = head;
+  while (temp != NULL) {
+    temp->data->print();
+    temp = temp->next;
+  }
+}
 
 int IdList::getSize() { return size; }

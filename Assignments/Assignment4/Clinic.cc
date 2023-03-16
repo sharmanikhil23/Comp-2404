@@ -15,12 +15,17 @@ Clinic::~Clinic() {
 }
 
 void Clinic::add(Customer *c) { customers->add(c); }
+
 void Clinic::add(Animal *a) { animals->add(a); }
+
 bool Clinic::addToCustomer(Customer *c, int id) {
 
   Identifiable *temp = NULL;
+
   if (animals->find(id, &temp)) {
-    animals->add(dynamic_cast<Animal *>(temp));
+    Animal *tempA = dynamic_cast<Animal *>(temp);
+    tempA->setParent(c);
+    c->addAnimal(tempA);
     return true;
   } else {
     return false;
@@ -28,7 +33,9 @@ bool Clinic::addToCustomer(Customer *c, int id) {
   // long implementation
 }
 void Clinic::print() {
-  cout << "Printing out all the Data of the Clinic from Clinic Class" << endl;
+  cout << "DATA FOR " << name << endl;
+  printAnimals();
+  printCustomers();
 }
 void Clinic::printCustomers() { customers->print(); }
 void Clinic::printAnimals() { animals->print(); }

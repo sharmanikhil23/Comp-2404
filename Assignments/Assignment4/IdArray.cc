@@ -4,7 +4,7 @@ using namespace std;
 
 #include "IdArray.h"
 
-IdArray::IdArray(int m, bool a) : Collection(a) {
+IdArray::IdArray(bool a, int m) : Collection(a) {
   maxSize = m;
   data = new Identifiable *[maxSize];
   size = 0;
@@ -25,28 +25,29 @@ bool IdArray::add(Identifiable *obj) {
   }
 
   bool asc = Collection::asc;
+
   int index = 0;
   bool find = false;
   for (int i = 0; i < size; i++) {
-    index = i;
     if (asc) {
       if (data[i]->getCompValue() > obj->getCompValue()) {
         find = true;
+        index = i;
         break;
       }
     } else {
       if (data[i]->getCompValue() < obj->getCompValue()) {
         find = true;
+        index = i;
         break;
       }
     }
   }
 
-  for (int i = size - 1; i > index; i--) {
-    data[i + 1] = data[i];
-  }
-
   if (find) {
+    for (int i = size; i > index; i--) {
+      data[i] = data[i - 1];
+    }
     data[index] = obj;
   } else {
     data[size] = obj;
@@ -68,4 +69,10 @@ bool IdArray::find(int id, Identifiable **foundObj) {
   return false;
 }
 
-void IdArray::print() { cout << "Printing from IdArray" << endl; }
+void IdArray::print() {
+  cout << endl;
+  cout << "CUSTOMERS:" << endl;
+  for (int i = 0; i < size; i++) {
+    data[i]->print();
+  }
+}

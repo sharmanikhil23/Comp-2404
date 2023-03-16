@@ -14,7 +14,7 @@ private:
   IdArray *customers;
 
 public:
-  Clinic(string = " Clinic name");
+  Clinic(string = "CARLETON ANIMAL HOSPITAL");
   ~Clinic();
   void add(Customer *);
   void add(Animal *);

@@ -15,6 +15,7 @@ Control::~Control() {
 
 void Control::launch() {
   initAnimals(c);
+
   initCustomers(c);
 
   int choice = 0;
@@ -40,6 +41,7 @@ void Control::initCustomers(Clinic *myClinic) {
   Customer *c;
 
   c = new Customer("Lee");
+
   myClinic->addToCustomer(c, 1003);
   myClinic->add(c);
 
