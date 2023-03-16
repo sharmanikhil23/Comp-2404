@@ -1,9 +1,7 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-class Animal;
-
-#include "Customer.h"
+class Customer;
 #include "Identifiable.h"
 #include "defs.h"
 
@@ -16,6 +14,7 @@ private:
   int age;
   Customer *parent;
   string getCustomerName();
+  string getSpecies(int);
 
 public:
   void setParent(Customer *);

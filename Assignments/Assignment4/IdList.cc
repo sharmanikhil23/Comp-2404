@@ -4,16 +4,28 @@ using namespace std;
 
 #include "IdList.h"
 
-IdList::IdList(bool a) : Collection(a) { head = NULL; size=0;}
+IdList::IdList(bool a) : Collection(a) {
+  head = NULL;
+  size = 0;
+}
 
-IdList::~IdList() { cleanupData(); }
+bool IdList::getAsc() { return Collection::asc; }
 
-void IdList::cleanupData() {
+IdList::~IdList() {
   Node *temp = head;
   while (temp != NULL) {
     Node *temp1 = temp->next;
     delete temp->data;
     delete temp;
+    temp = temp1;
+  }
+}
+
+void IdList::cleanupData() {
+  Node *temp = head;
+  while (temp != NULL) {
+    Node *temp1 = temp->next;
+    temp->data = NULL;
     temp = temp1;
   }
 }
@@ -67,7 +79,6 @@ bool IdList::find(int id, Identifiable **foundObj) {
 }
 
 void IdList::print() {
-  cout << "ANIMALS:" << endl;
   Node *temp = head;
   while (temp != NULL) {
     temp->data->print();

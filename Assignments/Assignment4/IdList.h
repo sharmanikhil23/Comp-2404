@@ -14,15 +14,17 @@ class IdList : public Collection {
 
 public:
   IdList(bool = true);
+  IdList(IdList *);
   virtual ~IdList();
   virtual bool add(Identifiable *);
   virtual bool find(int, Identifiable **);
   virtual void print();
   int getSize();
+  void cleanupData();
 
 private:
   int size;
   Node *head;
-  void cleanupData();
+  bool getAsc();
 };
 #endif

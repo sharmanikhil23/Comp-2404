@@ -11,6 +11,7 @@ IdArray::IdArray(bool a, int m) : Collection(a) {
 }
 
 IdArray::~IdArray() {
+
   for (int i = 0; i < size; i++) {
     delete data[i];
   }
@@ -70,8 +71,6 @@ bool IdArray::find(int id, Identifiable **foundObj) {
 }
 
 void IdArray::print() {
-  cout << endl;
-  cout << "CUSTOMERS:" << endl;
   for (int i = 0; i < size; i++) {
     data[i]->print();
   }

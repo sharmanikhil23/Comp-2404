@@ -10,7 +10,6 @@ Clinic::Clinic(string n) {
   customers = new IdArray(false);
 }
 Clinic::~Clinic() {
-
   delete animals;
   delete customers;
 }
@@ -38,5 +37,14 @@ void Clinic::print() {
   printAnimals();
   printCustomers();
 }
-void Clinic::printCustomers() { customers->print(); }
-void Clinic::printAnimals() { animals->print(); }
+void Clinic::printCustomers() {
+  cout << endl;
+  cout << "CUSTOMERS:" << endl;
+  cout << endl;
+  customers->print();
+}
+void Clinic::printAnimals() {
+  cout << endl;
+  cout << "ANIMALS:" << endl;
+  animals->print();
+}

@@ -1,8 +1,6 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-class Customer;
-
 #include "Animal.h"
 #include "IdList.h"
 #include "Identifiable.h"
