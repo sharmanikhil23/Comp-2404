@@ -4,7 +4,7 @@ using namespace std;
 
 #include "IdList.h"
 
-IdList::IdList(bool a) : Collection(a) { head = NULL; }
+IdList::IdList(bool a) : Collection(a) { head = NULL; size=0;}
 
 IdList::~IdList() { cleanupData(); }
 

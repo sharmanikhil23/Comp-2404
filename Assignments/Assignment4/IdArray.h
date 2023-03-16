@@ -15,7 +15,7 @@ public:
   virtual void print();
 
 private:
-  int maxSize;
+  int capacity;
   Identifiable **data;
   int size;
 };

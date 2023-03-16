@@ -5,8 +5,8 @@ using namespace std;
 #include "IdArray.h"
 
 IdArray::IdArray(bool a, int m) : Collection(a) {
-  maxSize = m;
-  data = new Identifiable *[maxSize];
+  capacity = m;
+  data = new Identifiable *[capacity];
   size = 0;
 }
 
@@ -19,7 +19,7 @@ IdArray::~IdArray() {
 
 bool IdArray::add(Identifiable *obj) {
 
-  if (size == maxSize) {
+  if (size == capacity) {
     cout << "Error: Max Size reached " << endl;
     return false;
   }
