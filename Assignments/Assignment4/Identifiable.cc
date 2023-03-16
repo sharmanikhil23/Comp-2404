@@ -6,4 +6,8 @@ using namespace std;
 
 Identifiable::Identifiable(int &i) : id(i++) {}
 
+Identifiable::~Identifiable(){
+  
+}
+
 int Identifiable::getId() { return id; }
