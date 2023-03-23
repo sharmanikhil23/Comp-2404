@@ -16,6 +16,7 @@ IdList::~IdList() {
   while (temp != NULL) {
     Node *temp1 = temp->next;
     temp->data = NULL;
+    delete temp;
     temp = temp1;
   }
 }
