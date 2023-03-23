@@ -5,6 +5,16 @@
 #include "Identifiable.h"
 #include "defs.h"
 
+/*
+Class  :  IdArray
+Purpose:  This is important class for Clinic as it does store all the CLients in
+the Array
+
+Critical Functions:
+~IdArray(): It will only deallocate the nodes which stores the animals for the
+customer but not the data
+*/
+
 class IdArray : public Collection {
 
 public:

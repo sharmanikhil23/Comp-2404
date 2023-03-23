@@ -3,6 +3,11 @@
 
 #include "Identifiable.h"
 
+/*
+Class  :  Collection
+Purpose:  This abstract class and the base class for other collection classes
+*/
+
 class Collection {
 
 protected:

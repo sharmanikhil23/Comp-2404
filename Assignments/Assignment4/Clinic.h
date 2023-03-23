@@ -6,6 +6,13 @@
 #include "IdArray.h"
 #include "IdList.h"
 
+/*
+Class  :  Clinic
+Purpose:  This is main class which will be used to take care of all the animals
+as well as customers too
+
+*/
+
 class Clinic {
 
 private:

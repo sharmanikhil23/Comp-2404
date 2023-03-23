@@ -5,6 +5,10 @@
 #include <string>
 using namespace std;
 
+/*
+ Class  :   View
+ Purpose:   This class helps to keep track of the Views for the user
+*/
 class View {
 public:
   ~View();

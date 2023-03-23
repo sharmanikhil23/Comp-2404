@@ -9,7 +9,7 @@ int Customer::nextId = CUSTOMER_IDS;
 
 Customer::Customer(string n) : Identifiable(nextId) { name = n; }
 
-Customer::~Customer() { pets.cleanupData(); }
+Customer::~Customer() {}
 
 void Customer::addAnimal(Animal *a) { pets.add(a); }
 

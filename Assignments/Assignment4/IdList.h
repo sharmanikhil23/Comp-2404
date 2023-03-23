@@ -4,6 +4,19 @@
 #include "Collection.h"
 #include "IdList.h"
 
+/*
+Class  :  IdList
+Purpose:  This is important class for Clinic as it does store all the Animals as
+the linked list
+
+Critical Functions:
+~IdList(): It will only deallocate the nodes which stores the animals for the
+customer but not the data
+
+cleanupData(); It will clean up all the data in animal collection
+
+*/
+
 class IdList : public Collection {
 
   class Node {

@@ -5,6 +5,16 @@ class Customer;
 #include "Identifiable.h"
 #include "defs.h"
 
+/*
+Class  :  Animal
+Purpose:  This is the Animal class which is used to make instance of the
+Animal for the Clinic
+
+Critical Functions:
+ ~Animal(): It does point the pointer of the parent to the NULL and we does do
+cleaning in IdArray Class
+
+*/
 class Animal : public Identifiable {
 private:
   static int nextId;

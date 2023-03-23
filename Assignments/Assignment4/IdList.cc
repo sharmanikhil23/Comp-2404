@@ -15,8 +15,7 @@ IdList::~IdList() {
   Node *temp = head;
   while (temp != NULL) {
     Node *temp1 = temp->next;
-    delete temp->data;
-    delete temp;
+    temp->data = NULL;
     temp = temp1;
   }
 }
@@ -25,7 +24,7 @@ void IdList::cleanupData() {
   Node *temp = head;
   while (temp != NULL) {
     Node *temp1 = temp->next;
-    temp->data = NULL;
+    delete temp->data;
     temp = temp1;
   }
 }

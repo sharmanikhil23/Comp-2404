@@ -10,6 +10,7 @@ Clinic::Clinic(string n) {
   customers = new IdArray(false);
 }
 Clinic::~Clinic() {
+  animals->cleanupData();
   delete animals;
   delete customers;
 }
