@@ -15,6 +15,12 @@ template <class T> CompareAge<T>::CompareAge(bool a) : CompareBehaviour<T>(a) {}
 
 template <class T> CompareAge<T>::~CompareAge() {}
 
-template <class T> bool CompareAge<T>::compare(T t1, T t2) { return true; }
+template <class T> bool CompareAge<T>::compare(T t1, T t2) {
+  if (CompareBehaviour<T>::asc == true) {
+    return t1->getAnimalAge() < t2->getAnimalAge() ? true : false;
+  } else {
+    return t1->getAnimalAge() > t2->getAnimalAge() ? true : false;
+  }
+}
 
 #endif

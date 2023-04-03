@@ -9,7 +9,7 @@ class Animal {
 public:
   Animal(SpeciesType, string, string, int, int, string);
   ~Animal();
-  int getAnimalId();
+  int getId();
   int getAnimalAge();
   string getName();
   string getParentName();

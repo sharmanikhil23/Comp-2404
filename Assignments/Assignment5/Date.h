@@ -30,7 +30,7 @@ private:
   int day;
   int month;
   int year;
-  static Time *time;
+  Time *time;
   static int lastDayInMonth(int, int);
   static bool leapYear(int);
 };

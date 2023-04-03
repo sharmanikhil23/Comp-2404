@@ -11,12 +11,12 @@ Animal::Animal(SpeciesType s, string n, string g, int y, int m, string p) {
   species = s;
   name = n;
   gender = g;
-  age = y * 12 + m;
+  age = (y * 12) + m;
   parent = p;
   id = nextId++;
 }
 
-Animal::~Animal() { cout << "Animal Class Destructor Called" << endl; }
+Animal::~Animal() {}
 
 ostream &operator<<(ostream &output, Animal &a) {
 
@@ -37,7 +37,7 @@ string Animal::getSpecies(int i) {
   }
 }
 
-int Animal::getAnimalId() { return id; }
+int Animal::getId() { return id; }
 int Animal::getAnimalAge() { return age; }
 string Animal::getName() { return name; }
 string Animal::getParentName() { return parent; }

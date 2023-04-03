@@ -16,5 +16,14 @@ CompareDate<T>::CompareDate(bool a) : CompareBehaviour<T>(a) {}
 
 template <class T> CompareDate<T>::~CompareDate() {}
 
-template <class T> bool CompareDate<T>::compare(T t1, T t2) { return true; }
+template <class T> bool CompareDate<T>::compare(T t1, T t2) {
+
+  if (CompareBehaviour<T>::asc == true) {
+    return *(t1->getAptDate()) < *(t2->getAptDate()) ? true : false;
+  } else {
+    return *(t1->getAptDate()) > *(t2->getAptDate()) ? true : false;
+  }
+
+  return true;
+}
 #endif

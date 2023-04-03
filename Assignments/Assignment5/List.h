@@ -19,7 +19,7 @@ public:
 
 template <class T> class List {
 
-  friend ostream &operator<<(ostream &out, List &l);
+  template <class M> friend ostream &operator<<(ostream &out, List<M> &l);
 
 public:
   List();
@@ -41,6 +41,7 @@ template <class T> List<T>::List() {
 }
 
 template <class T> List<T>::~List() {
+  delete cmp;
   Node<T> *temp = head;
   while (temp != NULL) {
     Node<T> *temp1 = temp->next;
@@ -72,25 +73,28 @@ template <class T> void List<T>::convertToArray(T *arr, int &size) {
     arr[index++] = (temp->data);
     temp = temp->next;
   }
+  size = index;
 }
 
 template <class T> ostream &operator<<(ostream &out, List<T> &l) {
 
-  out << "------FORWARD";
+  out << endl << endl << "------FORWARD" << endl;
 
   Node<T> *temp = l.head;
   Node<T> *lastN = NULL;
-  while (temp == NULL) {
-    out << temp->data;
+
+  while (temp != NULL) {
+    out << *(temp->data);
     if (temp->next == NULL) {
       lastN = temp;
     }
     temp = temp->next;
   }
+
   temp = lastN;
-  out << "------FORWARD";
-  while (temp == NULL) {
-    out << temp->data;
+  out << endl << endl << "------Backward" << endl;
+  while (temp != NULL) {
+    out << *(temp->data);
     temp = temp->prev;
   }
   out << endl << endl;
@@ -100,11 +104,14 @@ template <class T> ostream &operator<<(ostream &out, List<T> &l) {
 template <class T> bool List<T>::add(T data) {
   Node<T> *newNode = new Node<T>;
   newNode->data = data;
+  newNode->prev = NULL;
+  newNode->next = NULL;
 
   Node<T> *temp = head;
   Node<T> *prev = NULL;
 
   while (temp != NULL) {
+
     if (cmp->compare((temp->data), data) == false) {
       break;
     }
@@ -122,11 +129,24 @@ template <class T> bool List<T>::add(T data) {
   newNode->next = temp;
 
   if (temp != NULL) {
-    temp->prev = temp;
+    temp->prev = newNode;
   }
 
   return true;
 }
 
-template <class T> bool List<T>::find(int, T *) { return true; }
+template <class T> bool List<T>::find(int i, T *elm) {
+  Node<T> *temp = head;
+
+  while (temp != NULL) {
+    if (temp->data->getId() == i) {
+      *elm = (temp->data);
+      return true;
+    }
+    temp = temp->next;
+  }
+
+  elm = NULL;
+  return false;
+}
 #endif

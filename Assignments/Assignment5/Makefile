@@ -19,7 +19,7 @@ Appt.o: Appt.h Appt.cc
 Main.o: Main.cc
 	g++ -c Main.cc
 
-Schedule.o: Schedule.cc Schedule.h
+Schedule.o: Schedule.cc Schedule.h List.h
 	g++ -c Schedule.cc
 
 View.o: View.cc View.h

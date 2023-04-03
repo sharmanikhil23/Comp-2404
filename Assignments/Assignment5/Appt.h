@@ -19,7 +19,7 @@ public:
   Appt(Animal *, Date *);
   ~Appt();
   bool sameDay(Appt *);
-  int getAptId();
+  int getId();
   Date *getAptDate();
 };
 

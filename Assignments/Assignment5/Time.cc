@@ -27,18 +27,18 @@ int Time::convertToMins() { return (hours * 60 + minutes); }
 
 ostream &operator<<(ostream &output, Time &t) {
   output << setfill('0') << setw(2) << t.hours << ":" << setfill('0') << setw(2)
-         << t.minutes << ":" << setfill('0');
+         << t.minutes;
 
   return output;
 }
 
-// comparing the t with this if this is > mean t is less mean true else false;
+// if this is less than true else false
 bool Time::operator<(Time &t) {
-  return (convertToMins() > t.convertToMins()) ? true : false;
+  return (convertToMins() < t.convertToMins()) ? true : false;
 }
 
 bool Time::operator>(Time &t) {
-  return (((*this) < t) == false && ((*this) == t) == false) ? true : false;
+  return (((*this) < t) == true || ((*this) == t) == true) ? false : true;
 }
 
 bool Time::operator==(Time &t) {

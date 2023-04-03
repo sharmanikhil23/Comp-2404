@@ -1,11 +1,14 @@
-result:	first.o student.o
-	g++ -o result first.o student.o
+result:	Animal.o Main.o DanceBehaviour.o
+	g++ -o result ./Animal.o ./Main.o ./DanceBehaviour.o
 
-first.o:	first.cc
-	g++ -c first.cc
+Main.o:	Main.cc
+	g++ -c Main.cc
 
-student.o:	student.cc
-	g++ -c student.cc
+Animal.o: Animal.cc Animal.h DanceBehaviour.h
+	g++ -c Animal.cc
 
-clean:	
-	rm *.o result
+DanceBehaviour.o: DanceBehaviour.cc DanceBehaviour.h
+	g++ -c DanceBehaviour.cc
+
+clean:
+	rm ./result ./*.o

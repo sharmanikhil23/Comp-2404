@@ -5,7 +5,7 @@ using namespace std;
 
 #include "Date.h"
 
-Time *Date::time = NULL;
+// Time *Date::time = NULL;
 
 Date::Date(int y, int m, int d, int h, int min) {
   day = d;
@@ -14,7 +14,7 @@ Date::Date(int y, int m, int d, int h, int min) {
   time = new Time(h, min);
 }
 
-Date::~Date() {}
+Date::~Date() { delete time; }
 
 bool Date::validate(int y, int m, int d) {
 
@@ -30,8 +30,9 @@ bool Date::validate(int y, int m, int d) {
 }
 
 bool Date::operator==(Date &d) {
+
   if (d.day == day && d.month == month && d.year == year &&
-      *(d.time) == *time) {
+      (*(d.time) == *time)) {
     return true;
   } else {
     return false;
@@ -41,25 +42,25 @@ bool Date::operator==(Date &d) {
 // if this is greater then d will be less mean true
 bool Date::operator<(Date &d) {
 
-  if (year > d.year) {
+  if (year < d.year) {
     return true;
-  } else if (year < d.year) {
+  } else if (year > d.year) {
     return false;
   } else {
-    if (month > d.month) {
+    if (month < d.month) {
       return true;
-    } else if (month < d.month) {
+    } else if (month > d.month) {
       return false;
     } else {
-      if (day > d.day) {
+      if (day < d.day) {
         return true;
-      } else if (day < d.day) {
+      } else if (day > d.day) {
         return false;
       } else {
-        if (*time == *(d.time) || !(*time < *(d.time))) {
-          return false;
-        } else {
+        if ((*time < *(d.time))) {
           return true;
+        } else {
+          return false;
         }
       }
     }

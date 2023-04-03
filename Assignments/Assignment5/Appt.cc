@@ -10,18 +10,22 @@ int Appt::nextId = APPT_IDS;
 Appt::Appt(Animal *a, Date *d) {
   animal = a;
   date = d;
-  id = nextId++;
+  id = nextId;
+  nextId++;
 }
 
-Appt::~Appt() {}
+Appt::~Appt() { delete date; }
 
 ostream &operator<<(ostream &output, Appt &a) {
-  output << left << setw(4) << a.id << " : " << a.date << a.animal->getName()
-         << a.animal->getParentName() << endl;
+
+  output << left << setw(4) << a.id << " : " << *(a.date) << " -- "
+         << setfill(' ') << left << setw(15) << a.animal->getName()
+         << " with parent " << a.animal->getParentName() << endl;
+
   return output;
 }
 
-int Appt::getAptId() { return id; };
+int Appt::getId() { return id; };
 Date *Appt::getAptDate() { return date; };
 
 bool sameDay(Appt *a2) { return true; }
