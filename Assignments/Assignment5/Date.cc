@@ -5,8 +5,6 @@ using namespace std;
 
 #include "Date.h"
 
-// Time *Date::time = NULL;
-
 Date::Date(int y, int m, int d, int h, int min) {
   day = d;
   month = m;

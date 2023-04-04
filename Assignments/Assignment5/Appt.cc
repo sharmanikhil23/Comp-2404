@@ -7,18 +7,16 @@ using namespace std;
 
 int Appt::nextId = APPT_IDS;
 
-Appt::Appt(Animal *a, Date *d) {
+Appt::Appt(Animal *a, Date *d) : Identifiable(nextId) {
   animal = a;
   date = d;
-  id = nextId;
-  nextId++;
 }
 
 Appt::~Appt() { delete date; }
 
 ostream &operator<<(ostream &output, Appt &a) {
 
-  output << left << setw(4) << a.id << " : " << *(a.date) << " -- "
+  output << left << setw(4) << a.getId() << " : " << *(a.date) << " -- "
          << setfill(' ') << left << setw(15) << a.animal->getName()
          << " with parent " << a.animal->getParentName() << endl;
 
@@ -27,5 +25,8 @@ ostream &operator<<(ostream &output, Appt &a) {
 
 int Appt::getId() { return id; };
 Date *Appt::getAptDate() { return date; };
+void Appt::print() { cout << *this; }
+
+int Appt::getCompValue() { return 0; }
 
 bool sameDay(Appt *a2) { return true; }

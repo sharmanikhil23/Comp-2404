@@ -3,15 +3,15 @@
 
 #include "Animal.h"
 #include "Date.h"
+#include "Identifiable.h"
 #include "defs.h"
 
-class Appt {
+class Appt : public Identifiable {
 
   friend ostream &operator<<(ostream &output, Appt &a);
 
 private:
   static int nextId;
-  int id;
   Animal *animal;
   Date *date;
 
@@ -21,6 +21,8 @@ public:
   bool sameDay(Appt *);
   int getId();
   Date *getAptDate();
+  virtual int getCompValue();
+  virtual void print();
 };
 
 #endif

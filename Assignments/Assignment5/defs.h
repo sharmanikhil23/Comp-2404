@@ -10,6 +10,8 @@
 #define OPEN_HRS 9
 #define CLOSE_HRS 16
 
+#define CUSTOMER_IDS 4001
+
 #define CURR_YEAR 2023
 
 typedef enum { C_DOG, C_CAT, C_SPEC_OTHER } SpeciesType;

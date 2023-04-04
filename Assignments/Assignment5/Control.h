@@ -2,10 +2,8 @@
 #define CONTROL_H
 
 #include "Animal.h"
-#include "CompareAge.h"
-#include "CompareDate.h"
+#include "Clinic.h"
 #include "List.h"
-#include "Schedule.h"
 #include "View.h"
 
 class Control {
@@ -16,11 +14,10 @@ public:
 
 private:
   View v;
-  List<Animal *> animals;
-  Schedule *sch;
+  Clinic *c;
   void initSchedule();
   void initAnimals();
-  bool addAppt(int, int, int, int, int, int);
+  void initCustomers(Clinic *);
 };
 
 #endif

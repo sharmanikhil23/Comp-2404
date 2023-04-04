@@ -29,13 +29,16 @@ public:
   void convertToArray(T *, int &);
   void cleanupData();
   void setCompBehv(CompareBehaviour<T> *c);
+  int getSize();
 
 private:
+  int size;
   Node<T> *head;
   CompareBehaviour<T> *cmp;
 };
 
 template <class T> List<T>::List() {
+  size = 0;
   head = NULL;
   cmp = NULL;
 }
@@ -78,7 +81,7 @@ template <class T> void List<T>::convertToArray(T *arr, int &size) {
 
 template <class T> ostream &operator<<(ostream &out, List<T> &l) {
 
-  out << endl << endl << "------FORWARD" << endl;
+  out << "------FORWARD" << endl;
 
   Node<T> *temp = l.head;
   Node<T> *lastN = NULL;
@@ -92,7 +95,7 @@ template <class T> ostream &operator<<(ostream &out, List<T> &l) {
   }
 
   temp = lastN;
-  out << endl << endl << "------Backward" << endl;
+  out << endl << "------Backward" << endl;
   while (temp != NULL) {
     out << *(temp->data);
     temp = temp->prev;
@@ -131,7 +134,7 @@ template <class T> bool List<T>::add(T data) {
   if (temp != NULL) {
     temp->prev = newNode;
   }
-
+  size++;
   return true;
 }
 
@@ -149,4 +152,6 @@ template <class T> bool List<T>::find(int i, T *elm) {
   elm = NULL;
   return false;
 }
+
+template <class T> int List<T>::getSize() { return size; }
 #endif

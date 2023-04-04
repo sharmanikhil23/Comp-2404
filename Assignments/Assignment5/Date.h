@@ -2,6 +2,7 @@
 #define DATE_H
 
 #include "Time.h"
+#include "defs.h"
 
 /*
  Class  :   Date
