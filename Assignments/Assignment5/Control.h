@@ -6,6 +6,13 @@
 #include "List.h"
 #include "View.h"
 
+/*
+Class  :  Control
+Purpose:  This is the Control class of the program, It does have the instance of
+both the View Class as well as Clinic Class. This class does deal with
+initilizing the data for both customers as well as animals
+
+*/
 class Control {
 public:
   Control();

@@ -81,7 +81,6 @@ bool IdList::find(int id, Identifiable **foundObj) {
 void IdList::print() {
   Node *temp = head;
   while (temp != NULL) {
-    // cout << *(temp->data);
     temp->data->print();
     temp = temp->next;
   }

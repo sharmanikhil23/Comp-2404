@@ -6,6 +6,19 @@
 
 class Customer;
 
+/*
+Class  :  Animal
+Purpose:  This is the Animal class which is used to make instance of the
+Animal for the Clinic and also store the pointer to the parent and this class in
+Inherited from the Identifiable class
+
+Critical Functions:
+ostream &operator<<(ostream &, Animal &): So we are doing the operator
+overloading to print the animal data but as we do not own the ostream class so
+we are providing it friendship so it can access the data from the Animal class
+
+*/
+
 class Animal : public Identifiable {
   friend ostream &operator<<(ostream &, Animal &);
 

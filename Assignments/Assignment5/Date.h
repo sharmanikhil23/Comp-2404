@@ -11,6 +11,8 @@
 Critical Functions:
 validate:    It is the static member function can be run from anywhere with just
 the class name
+operator==(Date &),bool operator<(Date &),bool operator>(Date &): for all these
+we are using the operator overloading
 
 */
 class Date {

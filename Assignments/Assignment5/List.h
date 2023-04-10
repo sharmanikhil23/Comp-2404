@@ -10,6 +10,11 @@ using namespace std;
 #include "CompareBehaviour.h"
 #include "CompareDate.h"
 
+/*
+ Class  :   Node
+ Purpose:   This class template does helps to store the data of the Node
+*/
+
 template <class T> class Node {
 public:
   T data;
@@ -17,6 +22,12 @@ public:
   Node<T> *prev;
 };
 
+/*
+ Class  :   List
+ Purpose:   This class is used to store the data in the doubly linked list and
+ as it is template class so we are making use of the behaviour classes to set
+ the behaviour
+*/
 template <class T> class List {
 
   template <class M> friend ostream &operator<<(ostream &out, List<M> &l);

@@ -8,6 +8,17 @@
 #include "Time.h"
 #include "defs.h"
 
+/*
+ Class  :   Schedule
+ Purpose:   This class helps us to keep track of the schedule of the Clinic with
+the help of List class
+
+Critical Functions:
+ ~Schedule(): it will call the cleanup function of the List class to clean up
+the data not the nodes and nodes will be clean up as soon as the object will go
+out from the stack
+
+*/
 class Schedule {
 
   friend ostream &operator<<(ostream &, Schedule &);

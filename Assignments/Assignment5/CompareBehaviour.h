@@ -6,6 +6,13 @@
 #include <string>
 using namespace std;
 
+/*
+Class  :  CompareBehaviour
+Purpose:  This is the base behaviour class for the other comparison classes and
+we are using the templates to define these classes
+
+*/
+
 template <class T> class CompareBehaviour {
 public:
   CompareBehaviour(bool = true);

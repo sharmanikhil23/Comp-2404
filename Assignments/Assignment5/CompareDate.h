@@ -3,6 +3,11 @@
 
 #include "CompareBehaviour.h"
 
+/*
+Class  :  CompareDate
+Purpose:  This is derived behaviour class derived from the CompareBehaviour
+class and this class is used to compare the Date behaviour
+*/
 template <class T> class CompareDate : public CompareBehaviour<T> {
 
 public:

@@ -3,6 +3,11 @@
 
 #include "CompareBehaviour.h"
 
+/*
+Class  :  CompareAge
+Purpose:  This is derived behaviour class derived from the CompareBehaviour
+class and this class is used to compare the age behaviour
+*/
 template <class T> class CompareAge : public CompareBehaviour<T> {
 
 public:

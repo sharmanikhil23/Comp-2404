@@ -17,8 +17,9 @@ int Customer::getCompValue() { return pets.getSize(); }
 
 ostream &operator<<(ostream &output, Customer &a) {
   output << setw(4) << a.getId() << "  " << a.getCustomerName() << endl;
-  output << "-----Pets" << endl << endl;
+  output << "-----Pets" << endl;
   a.pets.print();
+  output << endl << endl;
   return output;
 }
 

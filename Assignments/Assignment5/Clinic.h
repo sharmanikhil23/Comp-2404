@@ -14,7 +14,8 @@
 /*
 Class  :  Clinic
 Purpose:  This is main class which will be used to take care of all the animals
-as well as customers too
+which are being stored with the help of the List Class and should take care of
+all the customers as well as schedule
 
 */
 
